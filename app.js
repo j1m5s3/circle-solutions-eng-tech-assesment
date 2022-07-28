@@ -6,7 +6,6 @@ app.use(cookieParser())
 app.use(express.static(__dirname + "/component/"));
 
 const port = 3000
-var buttonClick = false;
 
 app.get('/', (req, res) => {
   console.log('GET');
@@ -15,6 +14,7 @@ app.get('/', (req, res) => {
 
   console.log('cookieValue: ', cookieValue);
   console.log('Cookies: ', req.cookies);
+  console.log('session id: ', req.sessionId);
 
   var cookieName = 'redVelvet';
   let options = {maxAge: 1000 * 60 * 5};
@@ -44,11 +44,9 @@ app.post('/', (req, res) => {
 
   let options = {maxAge: 1000 * 60 * 5};
 
-  if (cookieValue >= 0 || cookieValue == undefined){
-    cookieValue = 0;
-    res.cookie('redVelvet', cookieValue, options);
-    console.log('new cookieValue: ', cookieValue);
-  }
+
+  res.cookie('redVelvet', cookieValue, options);
+  console.log('new cookieValue: ', 0);
 
   res.send('cookie-set 0');
   

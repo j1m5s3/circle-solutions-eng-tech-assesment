@@ -1,0 +1,82 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "billingDetails": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          },
+          "postalCode": {
+            "type": "string"
+          },
+          "line1": {
+            "type": "string"
+          },
+          "district": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "city",
+          "country",
+          "postalCode",
+          "line1",
+          "district"
+        ]
+      },
+      "metadata": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "sessionId": {
+            "type": "string",
+            "minLength": 10
+          },
+          "ipAddress": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "email",
+          "sessionId",
+          "ipAddress"
+        ]
+      },
+      "idempotencyKey": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "keyId": {
+        "type": "string"
+      },
+      "encryptedData": {
+        "type": "string"
+      },
+      "expMonth": {
+        "type": "integer"
+      },
+      "expYear": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "billingDetails",
+      "metadata",
+      "idempotencyKey",
+      "keyId",
+      "encryptedData",
+      "expMonth",
+      "expYear"
+    ]
+  }
