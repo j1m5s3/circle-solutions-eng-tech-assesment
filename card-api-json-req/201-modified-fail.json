@@ -1,0 +1,16 @@
+{
+    "billingDetails": {
+        "name": "Satoshi Nakamoto",
+        "city": "Test City",
+        "country": "US",
+        "line1": "Test",
+        "district": "MA",
+        "postalCode": "11111"
+    },
+    "metadata": {"email": "customer-0001@circle.com", "phoneNumber": "+14155555555","sessionId": "xxx", "ipAddress": "172.33.222.1"},
+    "idempotencyKey": "dab573b2-2336-4739-9038-0f221a2fd945",
+    "encryptedData": "LS0tLS1CRUdJTiBQR1AgTUVTU0FHRS0tLS0tCgp3Y0JNQTBYV1NGbEZScFZoQVFmL1dBSzd4c0tMbVBJdENZTUFlbmdOYTAwK1B0ZjRnZU5NNGhWYnBYQ2sKRkR3U0FQTndZL2tXR0F2ZXZnRXpCYmY5UTNZRXhtR0IwSHNObDJwUG9ha2hjNXp6MzhrRTc3azhkTHJrClVLYWpvb0xROHdmN0dnVTc5ZjFxUUVJVzlVNmppMzJtejFKMUZzM1hRcG5hbGZKamgvUis4cHdmbkVEbwp3Tm9ibkZnRFRNSFVaU0J6eWJUeVdRa1B1SXh2QmxoMmFpQnpJSTJJVHRIT1NGTzd4bzB1V3ErMzFZSHkKbmRLbkNwVXNicHQzSEtVVzZHam92dy91cTRSdUZ2clBtdVlyMktxcmZNL2JaSEJhMkxTeG1YZnpiOWJWCkh4dUl0RlUrY2FtWVZLU0h2UlBaWFhBckNzSVp1S3ZSVXJ4TjFKWWNqTjhST0Z3RU03cFh3T3NTQ1plMQppTkphQWJta2oyZ0VkelRVZjRMNXRGc0tUSkJXSzNVWHJhd1VpVG4xd09PdFpjOVY4VW1qNmlIUjNnOTQKWmVVTmE0UHNGbTFVM3d0Zll3OEl6eTlZcm1XdTljZGliMFZCaHVUU1hXZExXSlZTbUR3aUV1anB6UWtOCnVEMnUKPURTWlUKLS0tLS1FTkQgUEdQIE1FU1NBR0UtLS0tLQo=",
+    "keyId": "key1",
+    "expMonth": 1,
+    "expYear": 2025
+}

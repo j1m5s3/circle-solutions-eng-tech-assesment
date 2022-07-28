@@ -9,9 +9,17 @@ const validator = new schemaValidator();
 
 const failingJsonInput = require('./card-api-json-req/failing-json-req.json');
 const successJsonInput = require('./card-api-json-req/201-json-req.json');
+const modifiedFailJsonInput = require('./card-api-json-req/201-modified-fail.json');
 const apiJsonSchema = require('./card-api-json-req/api-schema.json');
+const { response } = require('express')
 var result = validator.validate(failingJsonInput, apiJsonSchema);
 //failingJsonInput['metadata']['sessionId'] = '20202020202';
+
+var http = require('http');
+const { fail } = require('assert')
+
+
+
 console.log(failingJsonInput);
 console.log(result['errors']);
 
@@ -35,28 +43,51 @@ app.use(session({
     resave: false,
 }))
 
+app.use(express.static(__dirname + "/component/"));
 
 const port = 3000
 
+var publicIp;
+
+http.get({'host': 'api.ipify.org', 'port': 80, 'path': '/'}, function(resp) {
+    
+    resp.on('data', function(ip) {
+        console.log("My public IP address is: " + ip);
+        publicIp = ip.toString();
+    });
+
+});
+
+
 app.get('/', (req, res) => {
 
+    res.cookie('publicIp', publicIp, {maxAge: 30000});
+    res.sendFile(__dirname + '/index.html');
+    
+})
+
+app.post('/', (req, res) => {
+
     console.log('session_id: ', req.sessionID);
-    let ipAddr = req.ipAddress;
-    console.log(ipAddr);
+    console.log(req.session.cookie);
+    let ipAddr = publicIp;
+    //console.log('public ip: ', ipAddr);
     let session_id = req.sessionID;
+    
     
     var editFailJsonInput = JSON.parse(JSON.stringify(failingJsonInput));
     var sessionHash = session_id.hashCode();
     
-    editFailJsonInput['metadata']['sessionId'] = sessionHash;
-    editFailJsonInput['metadata']['ipAddress'] = ipAddr;
-    editFailJsonInput['idempotencyKey'] = uuidv4();
-
+    editFailJsonInput['billingDetails']['country'] = 'US';
+    editFailJsonInput['billingDetails']['name'] = 'Satoshi Nakamoto';
+    //editFailJsonInput['metadata']['sessionId'] = sessionHash;
+    //editFailJsonInput['metadata']['ipAddress'] = ipAddr;
+    editFailJsonInput['idempotencyKey'] = 'dab573b2-2336-4739-9038-0f221a2fd945'
+    console.log(failingJsonInput);
+    console.log('-------------------------------')
     console.log(editFailJsonInput);
     sdk.auth('QVBJX0tFWTo0ZjBlYWY5Yjk1OTAwNjljZjRhYmNiOGYyNjk1Y2M4ODoxNzIyNmMwMjVlYmVmYzVkZTlmOTJkMjU0ZjBhMDJiZg==');
-    sdk.createCard(editFailJsonInput)
-    .then(res => console.log(res))
-    .catch(err => console.error(err));
+    sdk.createCard(modifiedFailJsonInput).then(res => console.log(res)).catch(err => console.error(err));
 
     res.sendStatus(200);
 })
@@ -64,6 +95,10 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
+
+sendExternalApiReq = function(ipAddr, sessionId, ) {
+
+}
 
 /*
 sdk.auth('QVBJX0tFWTo0ZjBlYWY5Yjk1OTAwNjljZjRhYmNiOGYyNjk1Y2M4ODoxNzIyNmMwMjVlYmVmYzVkZTlmOTJkMjU0ZjBhMDJiZg==');

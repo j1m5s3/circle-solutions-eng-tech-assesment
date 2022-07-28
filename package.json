@@ -21,6 +21,7 @@
     "cookie-parser": "^1.4.6",
     "express": "^4.18.1",
     "express-session": "^1.17.3",
+    "http": "^0.0.1-security",
     "jsonschema": "^1.4.1",
     "uuid": "^8.3.2"
   }

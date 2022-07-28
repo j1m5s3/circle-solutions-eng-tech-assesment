@@ -1,0 +1,124 @@
+{
+  idempotencyKey: '12345',
+  expMonth: 1,
+  expYear: 2025,
+  keyId: 'key1',
+  encryptedData: 'LS0tLS1CRUdJTiBQR1AgTUVTU0FHRS0tLS0tCgp3Y0JNQTBYV1NGbEZScFZoQVFmL1dBSzd4c0tMbVBJdENZTUFlbmdOYTAwK1B0ZjRnZU5NNGhWYnBYQ2sKRkR3U0FQTndZL2tXR0F2ZXZnRXpCYmY5UTNZRXhtR0IwSHNObDJwUG9ha2hjNXp6MzhrRTc3azhkTHJrClVLYWpvb0xROHdmN0dnVTc5ZjFxUUVJVzlVNmppMzJtejFKMUZzM1hRcG5hbGZKamgvUis4cHdmbkVEbwp3Tm9ibkZnRFRNSFVaU0J6eWJUeVdRa1B1SXh2QmxoMmFpQnpJSTJJVHRIT1NGTzd4bzB1V3ErMzFZSHkKbmRLbkNwVXNicHQzSEtVVzZHam92dy91cTRSdUZ2clBtdVlyMktxcmZNL2JaSEJhMkxTeG1YZnpiOWJWCkh4dUl0RlUrY2FtWVZLU0h2UlBaWFhBckNzSVp1S3ZSVXJ4TjFKWWNqTjhST0Z3RU03cFh3T3NTQ1plMQppTkphQWJta2oyZ0VkelRVZjRMNXRGc0tUSkJXSzNVWHJhd1VpVG4xd09PdFpjOVY4VW1qNmlIUjNnOTQKWmVVTmE0UHNGbTFVM3d0Zll3OEl6eTlZcm1XdTljZGliMFZCaHVUU1hXZExXSlZTbUR3aUV1anB6UWtOCnVEMnUKPURTWlUKLS0tLS1FTkQgUEdQIE1FU1NBR0UtLS0tLQo=',
+  billingDetails: {
+    name: 'Satoshi',
+    country: 'USA',
+    district: 'MA',
+    line1: 'Test',
+    line2: '',
+    city: 'Test City',
+    postalCode: '11111'
+  },
+  metadata: {
+    email: 'customer-0001@circle.com',
+    phoneNumber: '2025550180',
+    sessionId: 'xxx',
+    ipAddress: '172.33.222.1'
+  }
+}
+[
+  ValidationError {
+    path: [ 'metadata', 'sessionId' ],
+    property: 'instance.metadata.sessionId',
+    message: 'does not meet minimum length of 10',
+    schema: { type: 'string', minLength: 10 },
+    instance: 'xxx',
+    name: 'minLength',
+    argument: 10,
+    stack: 'instance.metadata.sessionId does not meet minimum length of 10'
+  },
+  ValidationError {
+    path: [ 'idempotencyKey' ],
+    property: 'instance.idempotencyKey',
+    message: 'does not conform to the "uuid" format',
+    schema: { type: 'string', format: 'uuid' },
+    instance: '12345',
+    name: 'format',
+    argument: 'uuid',
+    stack: 'instance.idempotencyKey does not conform to the "uuid" format'
+  }
+]
+Example app listening on port 3000
+My public IP address is: 3.228.162.217
+session_id:  sNMiFhG3tyOlYIuzzKM99r2LiGCfaXVP
+{
+  path: '/',
+  _expires: 2022-07-28T16:02:00.429Z,
+  originalMaxAge: 30000,
+  httpOnly: true
+}
+{
+  idempotencyKey: '12345',
+  expMonth: 1,
+  expYear: 2025,
+  keyId: 'key1',
+  encryptedData: 'LS0tLS1CRUdJTiBQR1AgTUVTU0FHRS0tLS0tCgp3Y0JNQTBYV1NGbEZScFZoQVFmL1dBSzd4c0tMbVBJdENZTUFlbmdOYTAwK1B0ZjRnZU5NNGhWYnBYQ2sKRkR3U0FQTndZL2tXR0F2ZXZnRXpCYmY5UTNZRXhtR0IwSHNObDJwUG9ha2hjNXp6MzhrRTc3azhkTHJrClVLYWpvb0xROHdmN0dnVTc5ZjFxUUVJVzlVNmppMzJtejFKMUZzM1hRcG5hbGZKamgvUis4cHdmbkVEbwp3Tm9ibkZnRFRNSFVaU0J6eWJUeVdRa1B1SXh2QmxoMmFpQnpJSTJJVHRIT1NGTzd4bzB1V3ErMzFZSHkKbmRLbkNwVXNicHQzSEtVVzZHam92dy91cTRSdUZ2clBtdVlyMktxcmZNL2JaSEJhMkxTeG1YZnpiOWJWCkh4dUl0RlUrY2FtWVZLU0h2UlBaWFhBckNzSVp1S3ZSVXJ4TjFKWWNqTjhST0Z3RU03cFh3T3NTQ1plMQppTkphQWJta2oyZ0VkelRVZjRMNXRGc0tUSkJXSzNVWHJhd1VpVG4xd09PdFpjOVY4VW1qNmlIUjNnOTQKWmVVTmE0UHNGbTFVM3d0Zll3OEl6eTlZcm1XdTljZGliMFZCaHVUU1hXZExXSlZTbUR3aUV1anB6UWtOCnVEMnUKPURTWlUKLS0tLS1FTkQgUEdQIE1FU1NBR0UtLS0tLQo=',
+  billingDetails: {
+    name: 'Satoshi',
+    country: 'USA',
+    district: 'MA',
+    line1: 'Test',
+    line2: '',
+    city: 'Test City',
+    postalCode: '11111'
+  },
+  metadata: {
+    email: 'customer-0001@circle.com',
+    phoneNumber: '2025550180',
+    sessionId: 'xxx',
+    ipAddress: '172.33.222.1'
+  }
+}
+-------------------------------
+{
+  idempotencyKey: 'dab573b2-2336-4739-9038-0f221a2fd945',
+  expMonth: 1,
+  expYear: 2025,
+  keyId: 'key1',
+  encryptedData: 'LS0tLS1CRUdJTiBQR1AgTUVTU0FHRS0tLS0tCgp3Y0JNQTBYV1NGbEZScFZoQVFmL1dBSzd4c0tMbVBJdENZTUFlbmdOYTAwK1B0ZjRnZU5NNGhWYnBYQ2sKRkR3U0FQTndZL2tXR0F2ZXZnRXpCYmY5UTNZRXhtR0IwSHNObDJwUG9ha2hjNXp6MzhrRTc3azhkTHJrClVLYWpvb0xROHdmN0dnVTc5ZjFxUUVJVzlVNmppMzJtejFKMUZzM1hRcG5hbGZKamgvUis4cHdmbkVEbwp3Tm9ibkZnRFRNSFVaU0J6eWJUeVdRa1B1SXh2QmxoMmFpQnpJSTJJVHRIT1NGTzd4bzB1V3ErMzFZSHkKbmRLbkNwVXNicHQzSEtVVzZHam92dy91cTRSdUZ2clBtdVlyMktxcmZNL2JaSEJhMkxTeG1YZnpiOWJWCkh4dUl0RlUrY2FtWVZLU0h2UlBaWFhBckNzSVp1S3ZSVXJ4TjFKWWNqTjhST0Z3RU03cFh3T3NTQ1plMQppTkphQWJta2oyZ0VkelRVZjRMNXRGc0tUSkJXSzNVWHJhd1VpVG4xd09PdFpjOVY4VW1qNmlIUjNnOTQKWmVVTmE0UHNGbTFVM3d0Zll3OEl6eTlZcm1XdTljZGliMFZCaHVUU1hXZExXSlZTbUR3aUV1anB6UWtOCnVEMnUKPURTWlUKLS0tLS1FTkQgUEdQIE1FU1NBR0UtLS0tLQo=',
+  billingDetails: {
+    name: 'Satoshi Nakamoto',
+    country: 'US',
+    district: 'MA',
+    line1: 'Test',
+    line2: '',
+    city: 'Test City',
+    postalCode: '11111'
+  },
+  metadata: {
+    email: 'customer-0001@circle.com',
+    phoneNumber: '2025550180',
+    sessionId: 'xxx',
+    ipAddress: '172.33.222.1'
+  }
+}
+{
+  data: {
+    id: 'd1036673-604f-4dfa-9866-1f99bad52761',
+    status: 'complete',
+    last4: '0007',
+    billingDetails: {
+      name: 'Satoshi Nakamoto',
+      line1: 'Test',
+      city: 'Test City',
+      postalCode: '11111',
+      district: 'MA',
+      country: 'US'
+    },
+    expMonth: 1,
+    expYear: 2025,
+    network: 'VISA',
+    bin: '400740',
+    issuerCountry: 'ES',
+    fundingType: 'debit',
+    fingerprint: '603b2185-1901-4eae-9b98-cc20c32d0709',
+    verification: { cvv: 'pending', avs: 'pending' },
+    createDate: '2022-07-28T15:46:25.129Z',
+    metadata: { email: 'customer-0001@circle.com' },
+    updateDate: '2022-07-28T15:46:26.102Z'
+  }
+}

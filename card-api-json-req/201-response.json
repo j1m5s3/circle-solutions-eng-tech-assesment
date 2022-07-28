@@ -1,0 +1,31 @@
+{
+    "data": {
+      "id": "d1036673-604f-4dfa-9866-1f99bad52761",
+      "status": "complete",
+      "last4": "0007",
+      "billingDetails": {
+        "name": "Satoshi Nakamoto",
+        "line1": "Test",
+        "city": "Test City",
+        "postalCode": "11111",
+        "district": "MA",
+        "country": "US"
+      },
+      "expMonth": 1,
+      "expYear": 2025,
+      "network": "VISA",
+      "bin": "400740",
+      "issuerCountry": "ES",
+      "fundingType": "debit",
+      "fingerprint": "603b2185-1901-4eae-9b98-cc20c32d0709",
+      "verification": {
+        "cvv": "pending",
+        "avs": "pending"
+      },
+      "createDate": "2022-07-28T15:46:25.129Z",
+      "metadata": {
+        "email": "customer-0001@circle.com"
+      },
+      "updateDate": "2022-07-28T16:02:05.728Z"
+    }
+  }
